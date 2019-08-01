@@ -7,10 +7,12 @@ export default {
     }
   },
   mounted() {
+    console.log(this.player)
     this.__resizeHandler = debounce(() => {
-      if (this.chart) {
-        console.log(this.chart+'========')
-        this.chart.resize()
+      if (this.player) {
+        console.log(this.player)
+        this.player.enterFullScreen();
+        //this.player.resize()
       }
     }, 100)
     window.addEventListener('resize', this.__resizeHandler)

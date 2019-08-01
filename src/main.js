@@ -1,3 +1,5 @@
+import devtools from '@vue/devtools'
+
 import Vue from 'vue'
 
 import Cookies from 'js-cookie'
@@ -28,8 +30,10 @@ import * as filters from './filters' // global filters
  * please remove it before going online! ! !
  */
 import { mockXHR } from '../mock'
+devtools.connect('localhost','8098'/* host, port */);
+
 if (process.env.NODE_ENV === 'production') {
-  mockXHR()
+  mockXHR();
 }
 
 Vue.use(Element, {
@@ -45,6 +49,7 @@ Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
+  devtools,
   router,
   store,
   render: h => h(App)

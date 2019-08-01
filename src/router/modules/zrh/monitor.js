@@ -17,6 +17,12 @@ const monitorRouter = {
       // component: () => import('@/views/monitor/device-monitor'),
       name: 'device-monitor',
       meta: { title: '设备监控', noCache: true }
+    },
+    {
+      path: '/monitor/online-monitor',
+      component: () => import('@/views/video/video-player'),
+      name: 'online-monitor',
+      meta: { title: '實時監控', noCache: true }
     }
   ]
 }
